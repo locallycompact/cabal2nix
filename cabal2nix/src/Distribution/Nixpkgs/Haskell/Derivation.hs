@@ -128,8 +128,8 @@ instance Pretty Derivation where
       , onlyIf (_executableDepends /= mempty) $ pPrintBuildInfo "executable" _executableDepends
       , onlyIf (_testDepends /= mempty) $ pPrintBuildInfo "test" _testDepends
       , onlyIf (_benchmarkDepends /= mempty) $ pPrintBuildInfo "benchmark" _benchmarkDepends
-      , boolattr "enableLibraryProfiling" _enableLibraryProfiling _enableLibraryProfiling
-      , boolattr "enableExecutableProfiling" _enableExecutableProfiling _enableExecutableProfiling
+      , attr "enableLibraryProfiling" _enableLibraryProfiling _enableLibraryProfiling
+      , attr "enableExecutableProfiling" _enableExecutableProfiling _enableExecutableProfiling
       , boolattr "enableSplitObjs"  (not _enableSplitObjs) _enableSplitObjs
       , boolattr "doHaddock" (not _runHaddock) _runHaddock
       , boolattr "jailbreak" _jailbreak _jailbreak
